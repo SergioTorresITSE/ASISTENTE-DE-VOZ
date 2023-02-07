@@ -1,0 +1,428 @@
+
+body {
+    background-color:#393939;
+}
+
+.container{
+
+  max-width: 790px;
+
+}
+
+#logo{
+  margin-top: 20px;
+  text-align: center;
+}
+#logoImg{
+  width:200px;
+  
+}
+
+
+.star {  /* ANIMACION PARPADEO PARA SENSOR DE GAS*/
+    width: 18px;
+    text-align: center;
+    cover: inherit;
+    height: 18px;
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+    justify-content: center;
+    animation: example infinite .4s;
+    margin: 0 auto;
+}
+
+@keyframes example {
+    0% {background:  rgb(0, 0, 255);}
+    100% {background:  rgba(0, 0, 255,0);}
+}
+
+/* DEFINIMOS CARACTERISTICAS DE LA TABLA DE MODULOS */
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 62px;
+  height: 28px;
+  vertical-align: middle;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.sensor {
+  position: relative;
+  display: inline-block;
+  width: 95px;
+  height: 30px;
+  vertical-align: middle;
+  margin-top: 8px;
+}
+
+#icono{
+padding-left: 12px;
+}
+
+
+.botonActivar{
+  margin-top: 7px;
+}
+
+#sensores{
+
+  max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* TERMOMETRO PARA HUMEDAD Y TEMPERATURA*/
+.GaugeMeter{
+    Position:        Relative;
+    Text-Align:      Center;
+    Overflow:        Hidden;
+    Cursor:          Default;
+  }
+
+  .GaugeMeter SPAN,
+  .GaugeMeter B{
+    Margin:          0 23%;
+    Width:           54%;
+    Position:        Absolute;
+    Text-align:      Center;
+    Display:         Inline-Block;
+    Color: white;
+    Font-Weight:     100;
+    Font-Family:     "Open Sans", Arial;
+    Overflow:        Hidden;
+    White-Space:     NoWrap;
+    Text-Overflow:   Ellipsis;
+
+  }
+  .GaugeMeter[data-style="Semi"] B{
+    Margin:          0 10%;
+    Width:           80%;
+  }
+
+  .GaugeMeter S,
+  .GaugeMeter U{
+    Text-Decoration: None;
+    Font-Size:       .5em;
+    Opacity:         .5;
+    data-used:                 128
+  }
+
+  .GaugeMeter B{
+    Color:           Black;
+    Font-Weight:     300;
+    Font-Size:       .5em;
+    Opacity:         .8;
+    font-size:       12px;
+
+  }
+
+.Preview{
+  
+  
+
+text-align: center;
+}
+
+#desc{
+font-size: 14px;
+margin-left: 2px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #A1A6AB;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 19px;
+  left: 10px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #800080;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* SLIDERS */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.table th, .table td { 
+     border-top: none !important;
+     border-left: none !important;
+ }
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #313131 ;
+}
+
+.table-call {
+    min-height: .01%;
+    overflow-x: auto;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+
+.table.table-bordered.vertical,
+.table.table-bordered.vertical td,
+.table.table-bordered.vertical th{
+  border-top: 0px solid white !important;
+  border-bottom: 0px solid white !important;
+  border-right: 0px solid white !important;
+  border-left: 0px solid white !important;
+    }
+
+.head {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #4a4b4c;
+    border-top: 1px solid #a1a6ab;
+    text-align: center;
+}
+
+
+
+
+/* colores leds */
+.wrap {
+    /* min-height: 100vh; */
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+/* ASISTENTES DE VOZ */
+
+.pinkBg {
+    background-color: #933ec5!important;
+    background-image: linear-gradient(90deg, #da77e0, #cc17e2);
+
+}
+.intro-banner-vdo-play-btn{
+    height: 66px;
+    width: 66px;
+    position:absolute;
+    top: -5%;
+    left:50%;
+    text-align:center;
+    margin:-30px 0 0 -30px;
+    border-radius:100px;
+    z-index:1;
+}
+.intro-banner-vdo-play-btn i{
+    line-height:56px;
+    font-size:30px
+}
+.intro-banner-vdo-play-btn .ripple{
+    position:absolute;
+    width:160px;
+    height:160px;
+    z-index:-1;
+    left:50%;
+    top:50%;
+    opacity:0;
+    margin:-80px 0 0 -80px;
+    border-radius:100px;
+    -webkit-animation:ripple 1.8s infinite;
+    animation:ripple 1.8s infinite;
+}
+
+@-webkit-keyframes ripple{
+    0%{
+        opacity:1;
+        -webkit-transform:scale(0);
+        transform:scale(0)
+
+    }
+    100%{
+        opacity:0;
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+@keyframes ripple{
+    0%{
+        opacity:1;
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    100%{
+        opacity:0;
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(2){
+    animation-delay:.3s;
+    -webkit-animation-delay:.3s
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(3){
+    animation-delay:.6s;
+    -webkit-animation-delay:.6s
+}
+
+
+
+
+/* MALLA NEGRA*/
+
+#modal {
+  display:none; /* inicia apagado*/
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  
+}
+
+
+#modal p {
+  width: 60%;
+  height: 40%;
+  position: absolute;
+  top: 1%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#modal a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+
+
+
+ 
+.slidecontainer {
+    width: 100%;
+}
+
+.sliderDim {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.sliderDim:hover {
+    opacity: 1;
+    height: 35px;
+    
+}
+
+.sliderDim::-webkit-slider-thumb:hover{ 
+    opacity: 1;
+    height: 35px;
+    width: 30px;
+    
+}
+
+.sliderDim::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #8e3bcc;
+    cursor: pointer;
+}
+
+.sliderDim::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+
+/*arreglo para invertir el slider*/
+#dimvalue {
+ /* direction: rtl*/
+}
