@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <!-- ESCALAS PARA INTERFAZ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- PARA LA APP / DATOS JSON / ICONOS APP-->
+    <meta name="Cielo" content="Add to Home">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-startup-image" href="splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  
+    <meta name="msapplication-TileColor" content="#d5f4ef"> 
+    <meta name="theme-color" content="#d5f4ef">
+    
+    <!-- ICONOS PARA MOVIL -->
+    <link rel="apple-touch-icon" href="iconos/touch-icon-iphone.png">
+    <link rel="shortcut icon" sizes="16x16" href="iconos/icon-16x16.png">
+    <link rel="shortcut icon" sizes="196x196" href="iconos/icon-196x196.png">
+    <link rel="apple-touch-icon-precomposed" href="iconos/icon-152x152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- TERMINA LA APP -->
+
+    
+    <!-- TITULO HTML -->
+
+    <title>Proyecto ITSE</title>
+
+      <!-- LIBRERIAS / SCRIPTS / VINCULACION DE ARCHIVOS CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">                    <!-- ARCHIVO PRINCIPAL CSS -->
+    
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>   <!-- SCRIPT PARA FIREBASE-->
+    <script src="js/artyom.min.js"></script>                                       <!-- SCRIPT DATOS ARTYOM -->
+    <script src="js/artyomCommands.js"></script>                                   <!-- SCRIPT COMANDOS-->
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>    <!-- SCRIPT DATABASE VOCES -->
+
+    <!--------------------------------------------------------------------------------------------------------- -->
+
+</head>
+
+<body> <!-- CONTENIDO INTERACTIVO DE LA INTERFAZ-->
+       <!-- COMO: LOGOS,ICONOS,BOTONES,FONDO,PALETA DE COLORES, GRAFICOS PARA DATOS SENSADOS-->
+       <!-- TERMOETRO DE TEMP Y HUMEDAD, Y SOBRETODO LA RESPUESTA DEL ASISTENTE DE VOZ GRAFICADA CON ANIMACION -->
+
+
+<div class="container">
+      <div id="logo">
+        <img id="logoImg" src="img/SS.png"  > 
+        <h2 text-align="center" style="color:rgb(255, 255, 255)"> ASISTENTE DE VOZ</h2>
+        <p style="color:rgb(255, 255, 255)"> Para usar di en voz alta: <em>CORNELIA!</em> </p>
+      </div>
+  <hr>
+               <div class="row"  style="margin-top: 20px;">
+                <div class="col-md-12 text-center">
+                          <div class="outer-form">
+                    <table class="table-striped table table-bordered vertical">
+                      
+    <thead style="color: rgb(20, 201, 20); font-weight: normal; background-color: black; text-align: left;" >
+                            
+                          <tr>
+                              <th  class="head">Modulo</th> 
+                              <th  class="head">Lugar</th>
+                              <th style="width: 8px;"  class="head">Status</th>
+                          </tr>
+
+                          </thead>
+
+        <tbody style="border:1px solid transparent; background-color:#242424; color:#A1A6AB; text-align: left;">
+                            
+                      <tr>
+                          <td id="icono"><img src="img/foco.png" width="38px"><span id="desc"> Foco Sala</span> </td>
+                              <td id="desc">Sala</td>
+                              <td>
+                               <label class="switch">
+                               <input id="foco1" type="checkbox" >
+                               <span class="slider round"></span>
+                               </label>
+                              </td>
+                            </tr>
+
+
+                            <tr>
+                              <td id="icono"><img src="img/foco.png" width="38px"><span id="desc"> Foco Recamara</span> </td>
+                              <td id="desc">Recamara</td>
+                              <td>
+                               <label class="switch">
+                               <input id="foco2" type="checkbox" >
+                               <span class="slider round"></span>
+                               </label>
+                              </td>
+                            </tr>
+                           
+                            
+                            <tr>
+                              <td id="icono" ><img src="img/foco.png" width="38px"> <span id="desc"> Foco WC</span> </td>
+                              <td id="desc">WC</td>
+                              <td>
+                               <label class="switch">
+                               <input id="foco2" type="checkbox">
+                               <span class="slider round"></span>
+                               </label>
+                              </td>
+                             </tr>
+                          
+
+                     
+
+                            <tr>
+                              <td><img class="movImg" src="img/sensor.png" width="35px"><span id="desc" class="mov"> Movimiento</span>  </td>
+                              <td id="desc">Comedor</td>
+                              <td>
+                               <label class="switch">
+                               <input id="sensorMovimiento" type="checkbox">
+                               <span class="slider round"></span>
+                               </label>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td><img class="gasImg" src="img/sensor.png" width="35px"><span id="desc" class="gasStatus">  Gas</span>  </td>
+                              <td id="desc">Cocina</td>
+                              <td>
+                               <div class="star"></div>
+                              </td>
+                            </tr>
+
+
+
+                            <tr>
+                              <td id="icono"><img  src="img/netflix.png" width="35px"> <span id="desc">Netflix</span> </td>
+                              <td id="desc">TV</td>
+                              <td>
+                                    <label class="botonActivar">
+                             <form> 
+                              <a href="https://www.netflix.com/mx/login" target="_blank"  >
+                                <buttonn  id="netflix" type="checkbox"  class="btn btn-outline-primary" >Activar  </buttonn>
+                              </a> 
+                            </form>                
+                                    </label>
+                              </td>
+                            </tr>
+
+
+                            <tr>
+                              <td id="icono"><img  src="img/youtube.png" width="35px"> <span id="desc">Youtube</span> </td>
+                              <td id="desc">TV</td>
+                              <td>
+                               <label class="botonActivar">
+                                <form> 
+                                  <a href="https://www.youtube.com/" target="_blank"  >
+                                    
+                                    <button id="youtube" type="button" class="btn btn-outline-primary">Activar</button>
+                                  </a> 
+                                </form> 
+                    
+                               </label>
+                              </td>
+                            </tr> 
+
+
+
+                            <tr>
+                              <td id="icono"><img  src="img/glade.png" width="35px"> <span id="desc">Aromatizante</span> </td>
+                              <td id="desc">Sala</td>
+                              <td>
+                               <label class="botonActivar">
+                              <button id="aromatizante" type="button" class="btn btn-outline-primary">Activar</button>
+                               </label>
+                              </td>
+                            </tr>
+
+                             <tr>
+                              <td id="icono"><img src="img/tv.png" width="38px"><span id="desc"> TV</span> </td>
+                              <td id="desc">Sala2</td>
+                              <td>
+                               <label class="switch">
+                               <input id="tv" type="checkbox" >
+                               <span class="slider round"></span>
+                               </label>
+                              </td>
+                            </tr>
+
+
+
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+              </div>
+
+          
+  
+
+    <div class="Preview">
+             <h7 style="color: white;">Temperatura y Humedad</h7>
+                  
+                  <div class="row" id="sensores">
+
+              <div class="col-xs-6 ">
+                       
+                        <div class="GaugeMeter" id="grados"  data-append=" C" data-size="140" 
+                              data-theme="White" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors=true 
+                              data-animate_text_colors=true data-width="15" data-label="Recamara " 
+                              data-style="Arch" data-label_color="#FFF">
+                        </div>
+
+              </div>
+
+              <div class="col-xs-6 ">
+                 <div class="GaugeMeter" id="humedadMarca"  data-append="H" data-size="140" 
+                      data-theme="White" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors=true 
+                      data-animate_text_colors=true data-width="15" data-label="Recamara" 
+                      data-style="Arch" data-label_color="#FFF">
+                 </div>
+
+              </div>
+
+          </div>
+    </div>
+
+
+
+
+          </div>
+    </div>
+
+    
+          <div class="col-md-12 Preview">
+             
+                <td ><img id="icono_dim" src="img/foco.png" width="38px"></td>
+                  <h7 style="color: white;">Dimmer</h7> </p>
+                  <input id="dimvalue" class="sliderDim" type="range" min="33" max="255" value="50">
+              </div>  
+              </div>  
+  
+
+  <hr>
+
+     <!-- paleta de colores -->
+
+     <div class="wrap">
+       <h7 style="color: white;"> Tira de leds </h7>
+     </div>
+        
+      <div class="wrap">
+          <div class="half">
+            <div class="wrapper"></div>
+          </div>
+          <div class="half readout"></div>
+        </div>
+      <!-- paleta de colores end-->
+
+        <!-- preloader
+    ================================================== -->
+    <div id="preloader" style="text-align: center;">
+        <div id="loader">
+            <img src="img/loader.gif" style="width: 110px">
+            <p style="color: white; text-align: center;">Cargando...</p>
+           
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+  <br>
+  <br>
+  <br>
+  <br>  
+
+ </div> <!-- paleta de colores end-->
+
+
+<div class="footer">
+   <div class="site-footer">
+    
+    <div class="row" >
+
+    </div>
+
+   </div>
+</div>
+
+
+
+<!-- CONTENIDO VISUAL PARA LA RESPUESTA DEL ASISTENTE-->
+
+<div id="modal">
+<p id="resText"></p> 
+  <a class="intro-banner-vdo-play-btn pinkBg" target="_blank">
+        <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
+        <span class="ripple pinkBg"></span>
+        <span class="ripple pinkBg"></span>
+        <span class="ripple pinkBg"></span>
+        </a>
+</div>
+
+<!---------------------------------------   L I N K S   --------------------------------------------------------->
+
+<script src="js/jquery-3.2.1.min.js"></script> <!-- PARA USAR SCRIPTS DE JQUERY -->
+
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js'></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> <!-- LIB PARA SASS -->
+
+<script src="js/main.js"></script>  <!-- ANEXANDO EL ARCHIVO PRINCIPAL PARA FUNCIONALIDADES -->
+<script src="appCon.js"></script>   <!-- NECESARIO PARA LA APP-->
+<script src="js/Viernes_Jarvis.js"></script> <!-- ANEXANDO LAS RESPUESTAS DE NUESTRO ASISTENTE -->
+
+<script src="js/GaugeMeter.js"></script>      <!-- SCRIPT PARA MEDIDOR -->
+<script src='https://rawgit.com/jaames/iro.js/master/dist/iro.js'></script>  <!-- SCRPT PARA ENCABEZADOS CSS -->
+<script src="js/typewriter.js"></script>     <!-- SCRIPT PARA TIPO DE LETRA -->
+
+
+
+
+</body>
+</html>

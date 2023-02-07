@@ -1,0 +1,24 @@
+{
+  "name": "Viernes_Jarvis",
+  "short_name": "Viernes_Jarvis",
+  "description": "System Viernes_Jarvis by SergioITSE",
+  "scope": ".",
+  "start_url": "/demos",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "black-translucent",
+  "background_color": "#d5f4ef",
+  "icons": [
+    {
+      "src": "iconos/touch-icon-iphone.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "iconos/touch-icon-ipad-retina.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    }
+  ]
+}
+
